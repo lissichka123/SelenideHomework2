@@ -34,7 +34,7 @@ public class AppCardDeliveryTaskOneTest {
     }
 
     @Test
-    public void shouldBeSuccessfully() {
+    public void searchCityByList() {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Мо");
         $$(".menu-item__control").findBy(text("Москва")).click();
@@ -52,7 +52,7 @@ public class AppCardDeliveryTaskOneTest {
     }
 
     @Test
-    public void shouldBeSuccessf() {
+    public void setDateOnCalendar() {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Рязань");
         String planningDate = generateDate(7, "dd.MM.yyyy");
@@ -61,7 +61,7 @@ public class AppCardDeliveryTaskOneTest {
             $$(".calendar__day").findBy(text(generateDate(7, "dd"))).click();
         } else {
             $("[class='calendar__arrow calendar__arrow_direction_right']").click();
-            $$(".calendar__day").findBy(text(generateDate(7, "dd"))).click();
+            $$(".calendar__day").findBy(text(generateDate(7, "d"))).click();
         }
         $("[data-test-id='name'] input").setValue("Иванов-Иванович Иван");
         $("[data-test-id='phone'] input").setValue("+79005553535");
